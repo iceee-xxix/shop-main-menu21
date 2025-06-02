@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Orders extends Model
+class OrdersOption extends Model
 {
     use HasFactory;
 
-    public function orderdetail()
+    public function option()
     {
-        return $this->hasMany(OrdersDetails::class, 'order_id');
+        return $this->belongsTo(MenuOption::class, 'option_id');
     }
 }
