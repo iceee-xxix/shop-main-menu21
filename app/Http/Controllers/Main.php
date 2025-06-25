@@ -134,7 +134,7 @@ class Main extends Controller
 
     public function sendEmp()
     {
-        $table = Table::where('table_id', session('table_id') ?? 1);
+        $table = Table::where('table_id', session('table_id') ?? 1)->first();
         event(new OrderCreated(['ลูกค้าเรียกจากโต้ะที่ ' . $table->table_number]));
     }
 }
